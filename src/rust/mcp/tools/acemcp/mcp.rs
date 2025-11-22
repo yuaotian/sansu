@@ -203,7 +203,7 @@ impl AcemcpTool {
         if let serde_json::Value::Object(schema_map) = schema {
             Tool {
                 name: Cow::Borrowed("sou"),
-                description: Some(Cow::Borrowed("基于查询在特定项目中搜索相关的代码上下文。此工具在搜索前自动执行增量索引，确保结果始终是最新的。返回代码库中与查询语义相关的格式化文本片段。")),
+                description: Some(Cow::Borrowed("基于查询在特定项目中搜索相关的代码上下文。依赖后台增量索引与文件监听机制维护索引，并在索引进行中通过智能等待在实时性和响应速度之间做平衡。返回代码库中与查询语义相关的格式化文本片段。")),
                 input_schema: Arc::new(schema_map),
                 annotations: None,
             }
