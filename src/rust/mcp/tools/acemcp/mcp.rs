@@ -1,5 +1,5 @@
 use anyhow::Result;
-use rmcp::{model::*, ErrorData as McpError};
+use rmcp::model::{ErrorData as McpError, Tool, CallToolResult, Content};
 use std::borrow::Cow;
 use std::collections::{HashMap, HashSet};
 use std::fs;
@@ -285,7 +285,7 @@ impl AcemcpTool {
                 icons: None,
                 meta: None,
                 output_schema: None,
-                structured_content: None,
+                title: None,
             }
         } else {
             panic!("Schema creation failed");

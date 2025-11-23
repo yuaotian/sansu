@@ -1,10 +1,11 @@
 use anyhow::Result;
 use rmcp::{
-    ErrorData as McpError, ServerHandler, ServiceExt, RoleServer,
-    model::*,
+    ServerHandler, ServiceExt, RoleServer,
+    model::{ErrorData as McpError},
     transport::stdio,
     service::RequestContext,
 };
+use rmcp::model::*;
 use std::collections::HashMap;
 
 use super::tools::{InteractionTool, MemoryTool, AcemcpTool};
@@ -119,7 +120,7 @@ impl ServerHandler for ZhiServer {
                 icons: None,
                 meta: None,
                 output_schema: None,
-                structured_content: None, // Guessing the 4th field might be structured_content or similar, let's try checking acemcp CallToolResult hints
+                title: None,
             });
         }
 
@@ -157,7 +158,7 @@ impl ServerHandler for ZhiServer {
                     icons: None,
                     meta: None,
                     output_schema: None,
-                    structured_content: None,
+                    title: None,
                 });
             }
         }
